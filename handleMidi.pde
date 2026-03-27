@@ -1,9 +1,4 @@
-// Callback function to handle incoming MIDI messages
-void noteOn(int channel, int pitch, int velocity) {
-  handleMidiInput(pitch, velocity);
-}
-
-void handleMidiInput(int pitch, int velocity) {
+public void handleMidiInput(int pitch, int velocity) {
   switch (pitch) {
     case 48: pickSticker = 0; break; // C2 delete sticker
     case 49: pickSticker = 1; break; // C#

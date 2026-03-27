@@ -1,6 +1,5 @@
 import java.io.File;
 import java.util.Arrays;
-import themidibus.*;
 
 color blue = #2bd1fc;
 color grey = #333333;
@@ -15,7 +14,7 @@ ArcadeShag arcadeShag;
 CommodoreTunnel commodoreTunnel;
 VectorTunnel vectorTunnel;
 
-MidiBus midiBus;
+MidiHandler midiHandler;
 
 PImage[] stickerFiles;
 Sticker[] stickers;
@@ -68,8 +67,8 @@ void setup() {
   commodoreTunnel.setup();
   vectorTunnel = new VectorTunnel(12, 30, 40, 0.25, 80);
 
-  // MidiBus.list(); // to find your devices
-  midiBus = new MidiBus(this, "Bus 1", -1); // Change the first argument to select the appropriate device
+  midiHandler = new MidiHandler(this);
+  midiHandler.setup();
 }
 
 void draw() {
@@ -181,6 +180,5 @@ boolean isImageFile(File file) {
 }
 
 void dispose() {
-  // Custom cleanup code to prevent midiBus from hanging on exit
-  midiBus.dispose();
+  if (midiHandler != null) midiHandler.close();
 }
