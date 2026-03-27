@@ -1,0 +1,51 @@
+STICKER SPINNER MANUAL =>
+
+three rows of keys to control everything!
+
+numbers = stickers
+qwerty row = sticker movement routine
+asdf row = background routine
+
+PERFORMANCE TRICKS:
+
+space bar = turns off screen redraw letting things blend (doesnt work well on everythingonly negative space stuff)
+up and down = moves between backgrounds in sequence
+left and right = moves between stickers in sequence
+
+STICKERS:
+1: maclike
+2: 4 hadrosaurs (album cover)
+3: hadrosaur monochrome
+4: bitch coin
+5: fuk yo monochrome dude
+6: drippin eye guy (album cover)
+7: waveform snakes (monochrome)
+8: pixel graffiti throw
+9: chunky pastel pixel logo
+0: no sticker
+
+STICKER MOVEMENT:
+
+q: default hover
+w: pulse
+e: rock gently horizontal
+r: spin and bounce
+t: still but fade in and out
+y: bounce taking up whole screen
+u: spin horizontally 
+i: spin vertically 
+o: rotate right
+p: rotate left
+
+BACKGRND:
+
+a: spinny grid
+s: noise rain
+d: rainbow raster bars
+f: rgb byte beat glitch
+g: purple plasma
+h: rotating mono vector squares 
+j: arcade shag
+k: commodore tunnel
+l: green hexagon tunnel
+semicolon: black bg
