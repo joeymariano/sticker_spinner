@@ -18,18 +18,22 @@ public void handleMidiInput(int pitch, int velocity) {
     case 64: pickBackground = 5; break; // E
     case 65: pickBackground = 6; break; // F
     case 66: pickBackground = 7; break; // F#
-    case 67: pickBackground = 8; break; // G
+    case 67: pickBackground = 8;  break; // G3
+    case 68: pickBackground = 9;  break; // G#3
+    case 69: pickBackground = 10; break; // A3
 
-    case 72: pickStickerRoutine = 1; break; // C4
-    case 73: pickStickerRoutine = 2; break; // C#
-    case 74: pickStickerRoutine = 3; break; // D
-    case 75: pickStickerRoutine = 4; break; // D#
-    case 76: pickStickerRoutine = 5; break; // E
-    case 77: pickStickerRoutine = 6; break; // F
-    case 78: pickStickerRoutine = 7; break; // F#
-    case 79: pickStickerRoutine = 8; break; // G
+    case 72: pickStickerRoutine = 1;  break; // C4
+    case 73: pickStickerRoutine = 2;  break; // C#4
+    case 74: pickStickerRoutine = 3;  break; // D4
+    case 75: pickStickerRoutine = 4;  break; // D#4
+    case 76: pickStickerRoutine = 5;  break; // E4
+    case 77: pickStickerRoutine = 6;  break; // F4
+    case 78: pickStickerRoutine = 7;  break; // F#4
+    case 79: pickStickerRoutine = 8;  break; // G4
+    case 80: pickStickerRoutine = 9;  break; // G#4
+    case 81: pickStickerRoutine = 10; break; // A4
 
-    case 80: releaseBackground = true; break; // G#4 (example for space bar equivalent)
-    case 81: releaseBackground = false; break; // A4 (example for space bar release)
+    case 84: releaseBackground = true;  break; // C5 — hold background
+    case 85: releaseBackground = false; break; // C#5 — release background
   }
 }
