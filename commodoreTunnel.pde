@@ -22,7 +22,6 @@ class CommodoreTunnel {
 
   void setup() {
     noStroke();
-    fullScreen();
     cols = width / pixelSize;
     rows = height / pixelHeight; // Adjust rows to use pixelHeight
     wave = new float[cols][rows];
