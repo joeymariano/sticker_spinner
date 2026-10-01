@@ -99,23 +99,43 @@ void keyPressed() {
 
   if (key == CODED) {
     if (keyCode == LEFT) {
-      pickSticker--;
-      if (pickSticker < 0) pickSticker = 9; // Loop around if below minimum
+      prevSticker();
     }
     if (keyCode == UP) {
-      pickBackground--;
-      if (pickBackground < 1) pickBackground = 8; // Loop around if below minimum
+      prevBackground();
     }
     if (keyCode == RIGHT) {
-      pickSticker++;
-      if (pickSticker > 9) pickSticker = 0; // Loop around if above maximum
+      nextSticker();
     }
-
     if (keyCode == DOWN) {
-      pickBackground++;
-      if (pickBackground > 8) pickBackground = 1; // Loop around if above maximum
+      nextBackground();
     }
   }
+}
+
+void prevSticker() {
+  pickSticker--;
+  if (pickSticker < 0) pickSticker = 9; // Loop around if below minimum
+}
+
+void nextSticker() {
+  pickSticker++;
+  if (pickSticker > 9) pickSticker = 0; // Loop around if above maximum
+}
+
+void prevBackground() {
+  pickBackground--;
+  if (pickBackground < 1) pickBackground = 8; // Loop around if below minimum
+}
+
+void nextBackground() {
+  pickBackground++;
+  if (pickBackground > 8) pickBackground = 1; // Loop around if above maximum
+}
+
+void nextRoutine() {
+  pickStickerRoutine++;
+  if (pickStickerRoutine > 10) pickStickerRoutine = 1; // Loop around if above maximum
 }
 
 void keyReleased() {

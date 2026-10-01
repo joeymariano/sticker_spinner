@@ -70,6 +70,8 @@ void setup() {
 
   // MidiBus.list(); // to find your devices
   midiBus = new SafeMidiBus(this, "Bus 1", -1); // Change the first argument to select the appropriate device
+
+  setupController(); // ESP32-C3 hardware buttons
 }
 
 void draw() {
@@ -200,4 +202,7 @@ class SafeMidiBus extends MidiBus {
 void dispose() {
   // Custom cleanup code to prevent midiBus from hanging on exit
   midiBus.dispose();
+  if (controller != null) {
+    controller.stop();
+  }
 }

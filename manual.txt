@@ -49,3 +49,10 @@ j: arcade shag
 k: commodore tunnel
 l: green hexagon tunnel
 semicolon: black bg
+
+HARDWARE BUTTONS (sticker_controller, ESP32-C3 over USB):
+
+D3: previous background (same as up arrow)
+D4: next sticker (same as right arrow)
+D5: hold to freeze background (same as space bar)
+D6: next sticker movement
