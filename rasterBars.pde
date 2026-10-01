@@ -48,7 +48,7 @@ class RasterBars {
       float y = positions[i] + sineWave;
       
       // Draw the rectangle
-      rect(displayWidth / 2, y, displayWidth, rectSize);
+      rect(width / 2, y, width, rectSize);
       
       // Only update position after its delay
       if (frameCount > i * frameDelay) {

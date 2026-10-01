@@ -12,7 +12,7 @@ class Grid {
 
   void update(color colr) {
     pushMatrix();
-    translate(displayWidth/2, displayHeight/2);
+    translate(width/2, height/2);
     
     if (spin >= TWO_PI){
       spin = 0;
@@ -23,10 +23,10 @@ class Grid {
     stroke(colr);
     strokeWeight(lineSize);
 
-    for (int i = -displayWidth; i < displayWidth; i += 128) {
-      line(i, -displayWidth, i, displayWidth);
-      for (int x = -displayWidth; x < displayWidth; x += 128) {
-        line(-displayWidth, x, displayWidth, x);
+    for (int i = -width; i < width; i += 128) {
+      line(i, -width, i, width);
+      for (int x = -width; x < width; x += 128) {
+        line(-width, x, width, x);
       }
     }
 

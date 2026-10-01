@@ -13,9 +13,9 @@ class Sticker {
     img = inComingImage;
     // Determine the scale factor based on the larger dimension
     if (img.width > img.height) {
-      scaleFactor = (displayWidth * 0.75) / img.width;
+      scaleFactor = (width * 0.75) / img.width;
     } else {
-      scaleFactor = (displayHeight * 0.75) / img.height;
+      scaleFactor = (height * 0.75) / img.height;
     }
   }
 

@@ -15,7 +15,7 @@ ArcadeShag arcadeShag;
 CommodoreTunnel commodoreTunnel;
 VectorTunnel vectorTunnel;
 
-MidiBus midiBus;
+SafeMidiBus midiBus;
 
 PImage[] stickerFiles;
 Sticker[] stickers;
@@ -69,7 +69,7 @@ void setup() {
   vectorTunnel = new VectorTunnel(12, 30, 40, 0.25, 80);
 
   // MidiBus.list(); // to find your devices
-  midiBus = new MidiBus(this, "Bus 1", -1); // Change the first argument to select the appropriate device
+  midiBus = new SafeMidiBus(this, "Bus 1", -1); // Change the first argument to select the appropriate device
 }
 
 void draw() {
@@ -118,7 +118,7 @@ void draw() {
   }
 
   // Draw foreground
-  translate(displayWidth / 2, displayHeight / 2);
+  translate(width / 2, height / 2);
   if (pickSticker > 0 && pickSticker <= stickers.length) {
     handleStickerRoutine(stickers[pickSticker - 1], pickStickerRoutine);
   }
@@ -178,6 +178,23 @@ boolean isImageFile(File file) {
     }
   }
   return false;
+}
+
+// MidiBus's equals()/hashCode() read fields that aren't set yet when its
+// constructor registers dispose() with Processing 4.5+, causing a
+// NullPointerException. Identity equality avoids touching those fields.
+class SafeMidiBus extends MidiBus {
+  SafeMidiBus(Object parent, String in, int out) {
+    super(parent, in, out);
+  }
+
+  public boolean equals(Object o) {
+    return this == o;
+  }
+
+  public int hashCode() {
+    return System.identityHashCode(this);
+  }
 }
 
 void dispose() {

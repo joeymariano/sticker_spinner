@@ -14,7 +14,7 @@ class Noise {
 
   void initializeLines() {
     for (int i = 0; i < numLines; i++) {
-      x[i] = random(displayWidth);
+      x[i] = random(width);
       strokeWeights[i] = random(1, 6);
       strokeColors[i] = random(255);
     }
@@ -22,7 +22,7 @@ class Noise {
 
   void updateLines() {
     for (int i = 0; i < numLines; i++) {
-      x[i] = random(displayWidth);
+      x[i] = random(width);
       strokeWeights[i] = random(1, 6);
       strokeColors[i] = random(255);
     }
