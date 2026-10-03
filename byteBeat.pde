@@ -10,7 +10,10 @@ class Bytebeat {
     this.pixelSize = pixelSize;
     this.frameDelay = frameDelay;
     this.frameCounter = 0;
-    this.pixelColors = new color[(width / pixelSize) * (height / pixelSize)];
+    // Round up so partial cells at the right/bottom edges get a slot too
+    int cols = (width + pixelSize - 1) / pixelSize;
+    int rows = (height + pixelSize - 1) / pixelSize;
+    this.pixelColors = new color[cols * rows];
   }
 
   void updateFrame() {
